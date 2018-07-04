@@ -3,6 +3,12 @@
 <p>{{ $post->body }}</p>
 <hr>
 
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <form action="{{ route('comments.store') }}" method="POST">
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{ $post->id }}">
