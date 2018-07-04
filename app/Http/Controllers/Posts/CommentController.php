@@ -14,7 +14,9 @@ class CommentController extends Controller
     {
         $post = $post->find($request->id);
  
-        $comment = $post->comments()->create($request->all());
+        $data = $request->all();
+        $data['user_id'] = 1; // auth()->user()->id;
+        $comment = $post->comments()->create($data);
  
         return redirect()
                     ->route('posts.show', $post->id)
