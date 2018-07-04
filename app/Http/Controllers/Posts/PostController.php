@@ -8,6 +8,13 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+    private $post;
+
+    public function __construct(Post $post)
+    {
+        $this->post = $post;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +54,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = $this->post->find($id);
+
+        return view('posts.show', compact('post'));
     }
 
     /**
