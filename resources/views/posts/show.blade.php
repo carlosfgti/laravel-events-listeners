@@ -12,3 +12,9 @@
         <button type="submit" class="btn btn-default">Comentar</button>
     </div>
 </form>
+<hr>
+@forelse ($post->comments as $comment)
+    <p>{{ $comment->body }}</p>
+@empty
+<p>Nenhum comentário!</p>
+@endforelse

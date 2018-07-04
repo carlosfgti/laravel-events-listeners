@@ -54,7 +54,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = $this->post->find($id);
+        $post = $this->post->with('comments')->find($id);
 
         return view('posts.show', compact('post'));
     }
