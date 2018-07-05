@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use Log;
 use App\Events\CommentedPost;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
