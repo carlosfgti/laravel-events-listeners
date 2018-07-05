@@ -2,6 +2,8 @@
 
 namespace App\Listeners;
 
+use App\Mail\PostCommentedMail;
+use Mail;
 use Log;
 use App\Events\CommentedPost;
 use Illuminate\Queue\InteractsWithQueue;
@@ -28,6 +30,10 @@ class SendMailCommentedPost
     public function handle(CommentedPost $event)
     {
         // Registring log commented post
-        Log::info($event->comment());
+        // Log::info($event->comment());
+        $comment = $event->comment();
+dd($comment);
+        Mail::to($comment->user->mail)
+                    ->send(new PostCommentedMail($comment));
     }
 }
