@@ -31,6 +31,8 @@ class PostCommentedMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.posts.new-comment');
+        return $this
+                    ->subject('Novo Comentário')
+                    ->view('mails.posts.new-comment');
     }
 }
