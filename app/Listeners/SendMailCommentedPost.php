@@ -32,8 +32,8 @@ class SendMailCommentedPost
         // Registring log commented post
         // Log::info($event->comment());
         $comment = $event->comment();
-dd($comment);
-        Mail::to($comment->user->mail)
+
+        Mail::to($comment->user->email)
                     ->send(new PostCommentedMail($comment));
     }
 }
