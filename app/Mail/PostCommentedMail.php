@@ -33,6 +33,6 @@ class PostCommentedMail extends Mailable
     {
         return $this
                     ->subject('Novo Comentário')
-                    ->view('mails.posts.new-comment');
+                    ->markdown('mails.posts.new-comment');
     }
 }
