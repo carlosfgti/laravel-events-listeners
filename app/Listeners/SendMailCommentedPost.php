@@ -9,7 +9,7 @@ use App\Events\CommentedPost;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendMailCommentedPost
+class SendMailCommentedPost implements ShouldQueue
 {
     /**
      * Create the event listener.
