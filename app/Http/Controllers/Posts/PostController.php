@@ -22,7 +22,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = $this->post->all();
+
+        return view('posts.index', compact('posts'));
     }
 
     /**
