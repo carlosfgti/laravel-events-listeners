@@ -16,6 +16,8 @@
                     @empty
                         <p>Nenhum post</p>
                     @endforelse
+
+                    {!! $posts->links() !!}
                 </div>
             </div>
         </div>
