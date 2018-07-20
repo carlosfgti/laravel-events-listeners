@@ -33,7 +33,7 @@ class SendMailCommentedPost implements ShouldQueue
         // Log::info($event->comment());
         $comment = $event->comment();
 
-        Mail::to($comment->user->email)
+        Mail::to($comment->post->user->email)
                     ->send(new PostCommentedMail($comment));
     }
 }
